@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
-load_dotenv("app/.env")
-
+if os.environ.get("RENDER") != "true":
+    load_dotenv("app/.env")
 
 
 DATABASE_URL = os.getenv("DATABASE_URL")
